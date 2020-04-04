@@ -12,9 +12,9 @@ do
     else
         ssh root@$line -n "rm -rf /kubernetes-examples/ && mkdir /kubernetes-examples/"
         echo "Copy data to $line"
-        scp  /kubernetes-examples/deploy.sh root@$line:/kubernetes-examples/ && scp /kubernetes-examples/token.sh root@$line:/mapreduce-test/
+        scp  /kubernetes-examples/deploy.sh root@$line:/kubernetes-examples/ && scp /kubernetes-examples/token.sh root@$line:/kubernetes-examples/
         echo "Setup $line"
-        ssh root@$line -n "cd /mapreduce-test/ && sudo ./deploy.sh && sudo ./token.sh"
+        ssh root@$line -n "cd /kubernetes-examples/ && sudo ./deploy.sh && sudo ./token.sh"
         echo "Finished config node $line"
     fi
 done

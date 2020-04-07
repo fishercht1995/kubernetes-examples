@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sparkexample
+spec:
+  restartPolicy: Never
+  containers:
+  - name: job
+    image: gettyimages/spark
+    command: ["bin/run-example"]
+    args: ["SparkPi","10"]

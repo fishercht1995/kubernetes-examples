@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hbaseexample
+spec:
+  restartPolicy: Never
+  hostname: hbase-master
+  containers:
+  - name: job
+    image: gelog/hbase
+    command: ["hbase"]
+    args: ["master","start"]
+    volumeMounts:
+      - name: hostvol
+        mountPath: /data
+  volumes:
+    - name: hostvol
+      hostPath:
+        path: /root/data/hbase

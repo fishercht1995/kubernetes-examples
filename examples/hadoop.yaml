@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hadoopexample
+spec:
+  restartPolicy: Never
+  containers:
+  - name: job
+    image: sequenceiq/hadoop-docker:2.7.0
+    command: ["/bin/bash"]
+    args: ["-c","/etc/bootstrap.sh -bash && sleep 20 && cd $HADOOP_PREFIX && bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.0.jar grep input output 'dfs[a-z.]+' && bin/hdfs dfs -cat output/*"]

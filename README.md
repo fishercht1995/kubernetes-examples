@@ -1,5 +1,6 @@
 # kubernetes-installer
 
+### master shoud have at least 2 cpus.
 ### edit workers file
 ### ./install.sh install kubernetes in the cluster
 ### ./start.sh run hadoop,spark and hbase examples

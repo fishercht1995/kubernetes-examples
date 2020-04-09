@@ -9,7 +9,7 @@
 3. go to root and git clone https://github.com/fishercht1995/kubernetes-examples.git
 
 
-4. in the /kubernetes-examples/ folder, change workers
+4. in the /kubernetes-examples/ folder, change workers (either internal or external ip)
 
 
 5. ./install.sh for installing kubernetes in the cluster

@@ -31,5 +31,7 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 apt-get update -y
-apt-get install -y kubelet=1.15.3-00 kubeadm=1.15.3-00 kubectl=1.15.3-00
+sudo apt autoremove
+sudo apt install conntrack cri-tools kubeadm kubectl kubelet kubernetes-cni
+apt-get install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
